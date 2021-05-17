@@ -17,13 +17,13 @@ def index():
    return render_template("index.html", mars=mars)
 
  # Set up the scraping route 
- @app.route("/scrape")
+@app.route("/scrape")
 def scrape():
    mars = mongo.db.mars
    mars_data = scraping.scrape_all()
    mars.update({}, mars_data, upsert=True)
    return redirect('/', code=302)
 
- # Tell Flask to run
- if __name__ == "__main__":
+# Tell Flask to run
+if __name__ == "__main__":
    app.run()  

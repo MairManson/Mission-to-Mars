@@ -24,8 +24,9 @@ def scrape_all():
     }
     
    # Stop webdriver (automated web scraping) and return data
-   browser.quit()
-   return data
+    browser.quit()
+    
+    return data
 
     # Live sites are a great resource for fresh data, but the layout of the site 
     # may be updated or otherwise changed. When this happens, there's a good chance 
